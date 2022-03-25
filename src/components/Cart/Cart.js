@@ -3,17 +3,17 @@ import './Cart.css'
 
 const Cart = (props) => {
 const {cart} = props;
-console.log(cart);
+// console.log(cart);
 // console.log(cart)
 
 let total = 0;
 let shipping = 0;
 
-console.log(shipping)
+// console.log(shipping)
 for(const product of cart){
     total = product.price + total;
     shipping = product.shipping + shipping;
-    console.log(shipping);
+    // console.log(shipping);
 }
 const tax = parseFloat((total * 0.1).toFixed(2));
  
