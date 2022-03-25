@@ -31,13 +31,22 @@ const Shop = () => {
 
     },[products])
     const handleAddToCart =(selectedProduct)=>{
-        console.log(selectedProduct)
+        console.log(selectedProduct);
+        let newCart = [];
         const exists = cart.find(product =>product.id===selectedProduct.id);
         if(!exists){
             selectedProduct.quantity = 1;
 
+            newCart = [...cart,selectedProduct ];
         }
-       const newCart = [...cart,selectedProduct ];
+        else{
+            // those which product i had added i want to this product with filter
+            const rest = cart.filter(product=>product.id !== selectedProduct.id);
+            exists.quantity= exists.quantity + 1;
+            newCart=[...rest, exists]
+
+            
+        }
        setCart(newCart);
        addToDb(selectedProduct.id)
     }
