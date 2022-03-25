@@ -9,11 +9,13 @@ let total = 0;
 let shipping = 0;
 let quantity = 0;
 // console.log(shipping)
+
 for(const product of cart){
+   
     quantity = quantity + product.quantity;
     total = product.price + total * product.quantity;
     shipping = product.shipping + shipping;
-    another
+    
     // console.log(shipping);
 }
 const tax = parseFloat((total * 0.1).toFixed(2));
